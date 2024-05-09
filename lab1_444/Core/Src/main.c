@@ -119,9 +119,9 @@ int main(void)
     /* USER CODE BEGIN 3 */
 	  //array max
 	  	  	  	  ITM_Port32(31) = 1;
-	 		  	  for (uint32_t i=0; i<1000; i++)
+	 		  	  for (uint32_t i=0; i<190000; i++)
 	 		  	  {
-	 		  		  cMax(&array, 10, &max, &maxIndex);
+	 		  		 cMax(&array, 10, &max, &maxIndex);
 	 		  	  }
 
 	 		  	  ITM_Port32(31) = 2;
@@ -143,6 +143,7 @@ int main(void)
 	 		  	  {
 	 		  		 arm_sqrt_f32 (9 ,&pout);
 	 		  	  }
+
 	 		  	  //in C
 	 		  	 ITM_Port32(31) = 5;
 	 		  	 for(uint32_t i = 0; i<1000; i++)
