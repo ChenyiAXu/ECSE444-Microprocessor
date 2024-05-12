@@ -53,10 +53,10 @@ Deliverables include C implementations for various functionalities:
   - ADC converts voltage to digital representation.
   - Configure the board, read ADC output then scale the ADC output.
   - Configuration:
-    - ADC1: Read Internal temperature sensor
-    - ADC2: Read internal voltage reference
+    - ADC3: Read Internal temperature sensor
+    - ADC1: Read internal voltage reference
     - Ensure channels `IN1` to `INX` are disabled.
-    - Enable **Temperature Sensor Channel** on ADC 1 and **Vrefint Channel** on another ADC.
+    - Enable **Temperature Sensor Channel** on ADC 3 and **Vrefint Channel** on ADC1.
     - Select sampling time and clock frequency based on [STM32L47x Manual 18.4.16](https://www.st.com/resource/en/reference_manual/dm00083560-stm32l47xxx-stm32l48xxx-stm32l49xxx-and-stm32l4axxx-advanced-armbased-32bit-mcus-stmicroelectronics.pdf).
   - Reading ADC Output: Refer to [Driver User Manual Section 7.2](https://www.st.com/resource/en/user_manual/dm00173145-description-of-stm32l4l4-hal-and-lowlayer-drivers-stmicroelectronics.pdf).
   - Scaling: Refer to the manual Section 18.4.32.
