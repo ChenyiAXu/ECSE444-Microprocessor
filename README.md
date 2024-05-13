@@ -93,7 +93,7 @@ The purpose of this lab is to use timers, interrupts, and direct memory access(D
     - Output Clock: Divider set to 33 (Divider = clock (80) /working clock(2.4))
   - When button pressed, recording starts and LED blinks. Without user intervention, once the recording buffer is full and processed, playback starts and LED stay on. Playback continues until button is pressed again, at which point recording starts.
 -  **Final Application Integration**
-  - Record a fixed-length sample on button press;
-  - On subsequent button press, play, in any order, at least six notes, and the recorded sample
-  - Re-record on subsequent button press
-  - LED is used to indicate the state of the program. 
+    - Record a fixed-length sample on button press;
+    - On subsequent button press, play, in any order, at least six notes, and the recorded sample
+    - Re-record on subsequent button press
+    - LED is used to indicate the state of the program. 
