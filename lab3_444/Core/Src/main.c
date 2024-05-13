@@ -493,7 +493,7 @@ static void MX_GPIO_Init(void)
 //		if(pressed == 0){
 //			//(filter, data, length)
 //			HAL_DFSDM_FilterRegularStart_DMA(&hdfsdm1_filter0, RecBuff, AUDIO_REC);
-//			//HAL_GPIO_TogglePin(LED_GPIO_Port, LED_Pin);
+
 //			pressed = 1;
 //		}else{
 //			HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET);
