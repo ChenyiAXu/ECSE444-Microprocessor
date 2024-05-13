@@ -560,21 +560,8 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_PIN){
 		}else if (pressed == 1){
 			// Stop any ongoing playback
 			HAL_DAC_Stop_DMA(&hdac1, DAC_CHANNEL_1);
-			// Turn off the LED to indicate that playback is starting
+			// LED to indicate that playback is starting
 			HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET);
-//			float max = -838809;
-//			float min = 838808;
-//			for(int i = 0; i < AUDIO_REC; i++){
-//				if(PlayBuff[i] > max){
-//					max = PlayBuff[i];
-//				}
-//				if(PlayBuff[i] < min){
-//					min = PlayBuff[i];
-//				}
-//			}
-//			for(int i =0; i< AUDIO_REC; i++){
-//				PlayBuff[i] = ((PlayBuff[i] - min)/(max-min))*4000;
-//			}
 			HAL_DAC_Start_DMA(&hdac1, DAC_CHANNEL_1, PlayBuff, AUDIO_REC, DAC_ALIGN_12B_R);
 			pressed = 2;
 		}else if (pressed == 2){
@@ -639,7 +626,6 @@ void HAL_DFSDM_FilterRegConvCpltCallback(DFSDM_Filter_HandleTypeDef *hdfsdm_filt
 				for(int i =0; i< AUDIO_REC; i++){
 					PlayBuff[i] = ((PlayBuff[i] - min)/(max-min))*4000;
 				}
-	//HAL_DFSDM_FilterRegularStop_DMA(&hdfsdm1_filter0);
 }
 //part 4 end
 
