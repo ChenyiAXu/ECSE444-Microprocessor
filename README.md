@@ -74,26 +74,26 @@ The purpose of this lab is to use timers, interrupts, and direct memory access(D
 
 - **Driving DAC with Timer and Global Interrupt**
   - Configuration
-    -LED: PB14, Mode: `GPIO_Output`
-    -Pushbutton: PC13 to GPIO_EXTI 13, `Enable EXTI line[15:10] Interrupts`
-    -TIM2: TRGO Parameters => 'Update Event', Enable TIM2 global Interrupt
-    -DAC1: Normal Mode, Enable Output Buffer, Trigger 'None', Disable Wave Generation Mode, Factory Trimming
-  -Implementation of Push Button interrupt
-  -Implementation of Timer-driven DAC Output
+    - LED: PB14, Mode: `GPIO_Output`
+    - Pushbutton: PC13 to GPIO_EXTI 13, `Enable EXTI line[15:10] Interrupts`
+    - TIM2: TRGO Parameters => 'Update Event', Enable TIM2 global Interrupt
+    - DAC1: Normal Mode, Enable Output Buffer, Trigger 'None', Disable Wave Generation Mode, Factory Trimming
+  - Implementation of Push Button interrupt
+  - Implementation of Timer-driven DAC Output
 - **Driving DAC with Timer and DMA**
-  -Reconfigure DAC: Under 'Trigger' in Parameter setting, Timer 2 Trigger Out Event
-  -DMA: Circular mode
-  -Regenrate code, comment out the timer call back
+  - Reconfigure DAC: Under 'Trigger' in Parameter setting, Timer 2 Trigger Out Event
+  - DMA: Circular mode
+  - Regenrate code, comment out the timer call back
 - **DFSDM Microphone**
-  -Configuration
-    -PE7 DFSDM1_DARIN2
-    -PE9 DFSDM1_CKOUT
-    -Channel 2 : mode --> PDM/SPI input from ch2 and internal clock
-    -Filter 0: Set fosr to 70 and losr to 1, Continuous mode, Software trigger, enable Fast mode and DMA mode
-    -Output Clock: Divider set to 33 (Divider = clock (80) /working clock(2.4))
-  -When button pressed, recording starts and LED blinks. Without user intervention, once the recording buffer is full and processed, playback starts and LED stay on. Playback continues until button is pressed again, at which point recording starts.
+  - Configuration
+    - PE7 DFSDM1_DARIN2
+    - PE9 DFSDM1_CKOUT
+    - Channel 2 : mode --> PDM/SPI input from ch2 and internal clock
+    - Filter 0: Set fosr to 70 and losr to 1, Continuous mode, Software trigger, enable Fast mode and DMA mode
+    - Output Clock: Divider set to 33 (Divider = clock (80) /working clock(2.4))
+  - When button pressed, recording starts and LED blinks. Without user intervention, once the recording buffer is full and processed, playback starts and LED stay on. Playback continues until button is pressed again, at which point recording starts.
 -  **Final Application Integration**
-  -Record a fixed-length sample on button press;
-  -On subsequent button press, play, in any order, at least six notes, and the recorded sample
-  -Re-record on subsequent button press
-  -LED is used to indicate the state of the program. 
+  - Record a fixed-length sample on button press;
+  - On subsequent button press, play, in any order, at least six notes, and the recorded sample
+  - Re-record on subsequent button press
+  - LED is used to indicate the state of the program. 
