@@ -166,36 +166,34 @@ int main(void)
 	 if (button == GPIO_PIN_RESET && lastButtonState == GPIO_PIN_SET) {
 		          // Button was pressed
 		          button_counter++;
-		          if (button_counter > 1) {
+		          if (button_counter > 6) {
 		              button_counter = 1;
 		          }
 		      }
 
 	lastButtonState = button;
 	if(button_counter ==1){
-//		 snprintf(message, 50, "Temperature = %f\r\n", temperature);
-//		 HAL_UART_Transmit(&huart1, (uint8_t *)message, sizeof(message), 10);
-		 snprintf(message3, 50, "%d, %d, %d\r\n", pDataXYZ[0], pDataXYZ[1], pDataXYZ[2]);
-		 HAL_UART_Transmit(&huart1, (uint8_t *)message3, sizeof(message3), 10);
+		 snprintf(message, 50, "Temperature = %f\r\n", temperature);
+		 HAL_UART_Transmit(&huart1, (uint8_t *)message, sizeof(message), 10);
 	}
-//	else if (button_counter ==2){
-//
-//		 snprintf(message1, 50, "Pressure = %f\r\n", pressure);
-//		 HAL_UART_Transmit(&huart1, (uint8_t *)message1, sizeof(message1), 10);
-//	}else if(button_counter ==3){
-//
-//		 snprintf(message2, 50, "Humidity = %f\r\n", humidity);
-//		 HAL_UART_Transmit(&huart1, (uint8_t *)message2, sizeof(message2), 10);
-//	}else if(button_counter == 4){
-//		 snprintf(message3, 50, "Accelero X = %d, Y = %d, Z = %d\r\n", pDataXYZ[0], pDataXYZ[1], pDataXYZ[2]);
-//		 HAL_UART_Transmit(&huart1, (uint8_t *)message3, sizeof(message3), 10);
-//	}else if(button_counter == 5){
-//		  snprintf(message4, sizeof(message4), "Gyro = %f\r\n", pfData);
-//		  HAL_UART_Transmit(&huart1, (uint8_t *)message4, sizeof(message4), 10);
-//	}else{
-//		snprintf(message5, sizeof(message5), "Magnet X = %d, Y = %d, Z = %d\r\n", pDataXYZMagnet[0], pDataXYZMagnet[1], pDataXYZMagnet[2]);
-//		HAL_UART_Transmit(&huart1, (uint8_t *)message5, sizeof(message5), 10);
-//	}
+	else if (button_counter ==2){
+
+		 snprintf(message1, 50, "Pressure = %f\r\n", pressure);
+		 HAL_UART_Transmit(&huart1, (uint8_t *)message1, sizeof(message1), 10);
+	}else if(button_counter ==3){
+
+		 snprintf(message2, 50, "Humidity = %f\r\n", humidity);
+		 HAL_UART_Transmit(&huart1, (uint8_t *)message2, sizeof(message2), 10);
+	}else if(button_counter == 4){
+		 snprintf(message3, 50, "Accelero X = %d, Y = %d, Z = %d\r\n", pDataXYZ[0], pDataXYZ[1], pDataXYZ[2]);
+		 HAL_UART_Transmit(&huart1, (uint8_t *)message3, sizeof(message3), 10);
+	}else if(button_counter == 5){
+		  snprintf(message4, sizeof(message4), "Gyro = %f\r\n", pfData);
+		  HAL_UART_Transmit(&huart1, (uint8_t *)message4, sizeof(message4), 10);
+	}else{
+		snprintf(message5, sizeof(message5), "Magnet X = %d, Y = %d, Z = %d\r\n", pDataXYZMagnet[0], pDataXYZMagnet[1], pDataXYZMagnet[2]);
+		HAL_UART_Transmit(&huart1, (uint8_t *)message5, sizeof(message5), 10);
+	}
 	HAL_Delay(38);
 
 	  //part 3
