@@ -96,4 +96,17 @@ The purpose of this lab is to use timers, interrupts, and direct memory access(D
     - Record a fixed-length sample on button press;
     - On subsequent button press, play, in any order, at least six notes, and the recorded sample
     - Re-record on subsequent button press
-    - LED is used to indicate the state of the program. 
+    - LED is used to indicate the state of the program.
+  ## Lab 4
+  - **UART and I2C Peripherals**
+    -Copy the board support package files into the project. (.c file to src, and .h file to inc, include path from the Components directory)
+    - I2C: Mode 'I2C'
+    - USART1: Mode 'Asynchronous'
+    - PUSHButton: PC13, 'GPIO_EXIT13'
+    - Install Serial Terminal to display UART
+
+    - Enable OCTOSPI1: Single Bank 'QUADSPI'
+  - **SPI Flash**
+    - OCTOSPI1 : Single Bank "QUAD SPI', PE10, and PE11 are set correctly. Disable the other 4, and reidentify the four proper pins based on the manual. 
+    -As before, copy BSP files into the project. 
+    - Before flash can be written, it must first be erased. 
